@@ -2,7 +2,7 @@ from faker import Faker
 
 from Models.Contact import Contact
 from Pages.add_contact_page import ContactPage
-from Pages.contacts_page import ContactsPage
+from Pages.contact_page import ContactsPage
 
 fake = Faker()
 def create_contact():
