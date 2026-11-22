@@ -1,0 +1,28 @@
+import pytest
+from selenium import webdriver
+
+from Pages.login_page import LoginPage
+from Tests.test_login import VALID_EMAIL, VALID_PASSWORD
+
+
+@pytest.fixture
+
+def driver():
+    driver = webdriver.Chrome()
+    driver.implicitly_wait(20)
+    driver.maximize_window()
+    driver.get("https://telranedu.pages.dev")
+
+    yield driver
+
+    driver.quit()
+
+@pytest.fixture
+def authenticated_client(driver):
+    login_page = LoginPage(driver)
+    login_page.open_login_page()
+    login_page.fill_email_field(VALID_EMAIL)
+    login_page.fill_password_field(VALID_PASSWORD)
+    login_page.click_login_button()
+
+    return driver
