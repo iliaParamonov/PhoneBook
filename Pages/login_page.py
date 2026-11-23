@@ -7,7 +7,7 @@ from selenium.common.exceptions import TimeoutException
 
 class LoginPage:
 
-    URL = "https://telranedu.web.app/login"
+    URL = "https://telranedu.pages.dev/login"
 
     EMAIL_INPUT = (By.NAME, "email")
     PASSWORD_INPUT = (By.NAME, "password")
